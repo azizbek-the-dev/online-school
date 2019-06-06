@@ -1,2 +1,2 @@
 # online-school
-Online School - Angular Example
+Online School - an Angular Example
