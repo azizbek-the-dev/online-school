@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+}
+
+.fa-book {
+    font-size: xx-large;
+    height: auto;
+}
+
+mat-card>mat-card-header {
+    padding: 5px;
+}
+
+mat-form-field {
+    margin: 15px;
+    width: 45%;
+    display: block;
+}
+
+button {
+    margin: 8px;
+}

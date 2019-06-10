@@ -1,0 +1,31 @@
+
+<mat-card>
+  <mat-card-header>
+        <i matCardAvatar class="fa fa-book"></i>
+        <mat-card-title>Ma'lumot kiritish darchasi</mat-card-title>
+        <mat-card-subtitle>Kerakli malumotlarni kiriting</mat-card-subtitle>
+    </mat-card-header><br><br>
+    <mat-card-content>
+      <mat-form-field>
+          <mat-label>Ismingizni kiriting:</mat-label>
+          <input matInput [(ngModel)]="name" placeholder="Ism tanlash - muhim amallardan biri !" required>
+          <mat-hint>Kiritilishi majburiy</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Loginingizni kiriting:</mat-label>
+          <span matPrefix> @ &nbsp;</span>
+          <input matInput [(ngModel)]="login" #id minlength="3" maxlength="36" placeholder="Login - sizning xos nomingiz !" required>
+          <mat-hint align="end">{{id.value?.length || 0}}/36</mat-hint>
+          <mat-hint align="start">3-36 belgi oralig'ida, probellarsiz</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Parolni kiriting:</mat-label>
+          <input matInput [(ngModel)]="password" type="password" placeholder="Parol himoya uchun zarur, shuning uchun o'ylab yozing !" required>
+          <mat-hint>Kiritilishi majburiy</mat-hint>
+      </mat-form-field>
+  </mat-card-content>        
+  <mat-card-actions>
+    <button mat-button color="warn" (click)="refresh()">TOZALAMOQ</button>
+    <button mat-flat-button color="primary" (click)="post()">YUBORMOQ</button>
+  </mat-card-actions>                      
+</mat-card>

@@ -1,22 +1,32 @@
 import { Component } from '@angular/core';
+import { ClientInfo } from './clients';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'signing',
-  template: `   <mat-card>
-                      <mat-card-header>
-                            <mat-card-title>Ma'lumot kiritish darchasi</mat-card-title>
-                            <mat-card-subtitle>Kerakli malumotlarni kiriting</mat-card-subtitle>
-                        </mat-card-header><br><br>
-                        <mat-card-content>
-                          <mat-form-field appearance="outline">
-                              <mat-label>Ismingizni kiriting:</mat-label>
-                              <input matInput placeholder="Ism kiritish majburiy!" required>
-                              <mat-hint>Kiritilishi majburiy</mat-hint>
-                          </mat-form-field>
-                      </mat-card-content>                              
-                </mat-card>
-            `,
+  templateUrl: './signing.component.html',
+  styleUrls: ['./signing.component.css']
 })
-export class SigningComponent {
 
+export class SigningComponent {
+    name: string;
+    password: string;
+    login: string;
+    info: Array<ClientInfo> = [];
+
+    constructor(private apiSvc: ApiService) {}
+
+    refresh(){
+      this.name = this.login = this.password = null;
+    }
+    
+    post(){
+      if(this.name != null || this.login != null || this.password != null) {
+        let newClient = new ClientInfo(this.name, this.login, this.password);
+        this.info.push(newClient);
+        this.apiSvc.postForm(newClient);
+      } else {
+        alert(`Barcha bo'limlarni to'ldiring!`);
+      }
+    }
 } 
