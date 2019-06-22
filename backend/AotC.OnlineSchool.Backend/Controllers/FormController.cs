@@ -13,7 +13,7 @@ namespace AotC.OnlineSchool.Backend.Controllers
     public class FormController : ControllerBase
     { 
         [HttpPost]
-        public void Post([FromBody] Forma forma)
+        public void Post([FromBody] String value)
         {
         }
     }

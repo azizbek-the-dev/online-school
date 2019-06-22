@@ -1,9 +1,9 @@
 
 <mat-card>
   <mat-card-header>
-        <i matCardAvatar class="fa fa-book"></i>
-        <mat-card-title>Ma'lumot kiritish darchasi</mat-card-title>
-        <mat-card-subtitle>Kerakli malumotlarni kiriting</mat-card-subtitle>
+        <i matCardAvatar class="fa fa-database"></i>
+        <mat-card-title>Registratsiya bo'lish</mat-card-title>
+        <mat-card-subtitle>Saytda ro'yxatdan o'tish uchun kerakli malumotlarni kiriting</mat-card-subtitle>
     </mat-card-header><br><br>
     <mat-card-content>
       <mat-form-field>
@@ -16,13 +16,14 @@
           <span matPrefix> @ &nbsp;</span>
           <input matInput [(ngModel)]="login" #id minlength="3" maxlength="36" placeholder="Login - sizning xos nomingiz !" required>
           <mat-hint align="end">{{id.value?.length || 0}}/36</mat-hint>
-          <mat-hint align="start">3-36 belgi oralig'ida, probellarsiz</mat-hint>
+          <mat-hint align="start">3-36 belgi oralig'ida, probellarsiz*</mat-hint>
       </mat-form-field>
       <mat-form-field>
           <mat-label>Parolni kiriting:</mat-label>
           <input matInput [(ngModel)]="password" type="password" placeholder="Parol himoya uchun zarur, shuning uchun o'ylab yozing !" required>
           <mat-hint>Kiritilishi majburiy</mat-hint>
       </mat-form-field>
+      <p>*Agarda Loginingizni kiritishda probellarsiz qo'yilsa, avtomatik olib tashlanadi</p>
   </mat-card-content>        
   <mat-card-actions>
     <button mat-button color="warn" (click)="refresh()">TOZALAMOQ</button>
