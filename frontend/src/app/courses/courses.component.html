@@ -1,0 +1,14 @@
+  <div id="list">
+    <mat-card class="course-list-card" *ngFor="let course of courses">
+     <mat-card-content>
+    <img mat-card-image src="{{ course.pic }}" [alt]="course.name">
+    <p>
+      {{ course.name }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions style="float: right">
+    <button mat-button>Ko'proq</button>
+    <button mat-raised-button color="primary" align="right" style="float: left">Qo'shilish</button>
+  </mat-card-actions>
+</mat-card>
+</div>

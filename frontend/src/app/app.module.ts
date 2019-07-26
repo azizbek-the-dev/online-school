@@ -8,21 +8,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SigningComponent } from './signing.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ApiService } from './api.service'
 import { CoursesComponent } from './courses/courses.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CodeEditorComponent } from './code-editor/code-editor.component';
+import { HighlightJsModule } from 'ngx-highlight-js';
+import { CourseDetailsComponent } from './course-details/course-details.component';
+import { Error404Component } from './error404/error404.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes = [
   { path: 'courses', component: CoursesComponent },
   { path: 'signing', component: SigningComponent },
   { path: 'editor', component: CodeEditorComponent },
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: '**', component: Error404Component}
 ];
 
 @NgModule({
@@ -32,7 +36,10 @@ const routes = [
     CoursesComponent,
     HomeComponent,
     NavbarComponent,
-    CodeEditorComponent
+    CodeEditorComponent,
+    CourseDetailsComponent,
+    Error404Component,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +53,12 @@ const routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     SweetAlert2Module.forRoot(),
-    MatToolbarModule
+    MatToolbarModule,
+    MatBadgeModule,
+    HighlightJsModule,
+    ReactiveFormsModule
   ],
-  providers: [ApiService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

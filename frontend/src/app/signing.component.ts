@@ -30,25 +30,25 @@ export class SigningComponent {
 
         }
       }*/
-      if(this.name != null || this.login != null || this.password != null) {
-        this.login = this.login.trim();
-        let newClient = new ClientInfo(this.name, this.login, this.password);
-        this.info.push(newClient);
-        console.log(this.info);
-        //this.apiSvc.postForm(newClient);
-      } else {
-        
+      if(this.name == null || this.login == null || this.password == null) {
         Swal.fire({
-          position: 'top-end',
-          title: 'Barcha bo`limlarni to`ldiring!',
-          type: 'error',
-          showConfirmButton: false,
-          timer: 2000,
-          padding: '1vw',
-          width: '6vw',
-          
-        });
+        title: 'Barcha bo`limlarni to`ldiring!',
+        type: 'error',
+        showConfirmButton: false,
+        timer: 2000
+      });
+    } else {
+      
+      this.PushNewUser();
+      //this.apiSvc.postForm(newClient);
         
     } 
     }
+
+  private PushNewUser() {
+    this.login = this.login.trim();
+    let newClient = new ClientInfo(this.name, this.login, this.password);
+    this.info.push(newClient);
+    console.log(this.info);
+  }
   }

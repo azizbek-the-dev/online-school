@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    margin:0;
 }
 
 .fa-database {
@@ -9,15 +8,14 @@
 }
 
 mat-card>mat-card-header {
-    padding: 5px;
+    padding: 2.5px;
 }
-
 mat-form-field {
     margin: 15px;
-    width: 45%;
     display: block;
 }
 
 button {
     margin: 8px;
 }
+

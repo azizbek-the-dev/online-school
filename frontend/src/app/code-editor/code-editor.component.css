@@ -1,0 +1,43 @@
+@import url('https://cdn.jsdelivr.net/npm/@typopro/web-fira-code@3.7.5/TypoPRO-FiraCode.min.css');
+*{
+    margin: 5px;
+}
+mat-card{
+    height: 25rem;
+    display: inline;
+    float: right;
+    width: 45%;
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+mat-card>*{
+    display: block;
+    float: left;
+}
+mat-form-field{
+    font-family: 'TypoPRO Fira Code', monospace;
+    width: 45%;
+}
+#out{
+    display: inline;
+}
+#code{
+    height: 25rem;
+}
+
+@media screen and (max-width: 670px) {
+    #out, mat-card, mat-form-field{
+        display: block;
+        width: 100%!important;
+        margin: auto;
+    }
+    mat-card, #out{
+        margin-left: 15px
+    };
+   #out{
+       float: right;
+   }
+   #out>*{
+       margin: 8px;
+   }
+}

@@ -1,0 +1,13 @@
+<span>
+  <button mat-flat-button color="accent" onclick="document.getElementById('out').innerHTML = document.getElementById('code').value;">Serverga ulash
+    (Ishlatish)</button>
+    <button mat-flat-button color="primary" onclick="document.getElementById('out').innerHTML = this.code.trim;">Minifikatsiyalash</button><br>
+    <mat-form-field>
+      <textarea matInput id="code" placeholder="HTML kodni shu yerga yozing!" [(ngModel)]="code" oninput="document.getElementById('out').innerHTML = code.value;"></textarea>
+    </mat-form-field>
+</span>
+<span>
+  <mat-card>
+    <div id="out" [(ngModel)]="out"></div>
+  </mat-card>
+</span>
